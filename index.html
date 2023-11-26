@@ -1,0 +1,35 @@
+import React from 'react';
+import './style.css';
+
+const PuzzleBlock = ({ number }) => {
+  return <div className="puzzle_block">{number}</div>;
+};
+
+const DifficultyButton = ({ text, isActive }) => {
+  const className = `difficulty_button ${isActive ? 'active' : ''}`;
+  return <div className={className}>{text}</div>;
+};
+
+const Puzzle = () => {
+  return (
+    <>
+      <div id="puzzle_container">
+        <PuzzleBlock number={1} />
+        <PuzzleBlock number={2} />
+        <PuzzleBlock number={3} />
+        <PuzzleBlock number={4} />
+        <PuzzleBlock number={5} />
+        <PuzzleBlock number={6} />
+        <PuzzleBlock number={7} />
+        <PuzzleBlock number={8} />
+      </div>
+      <div id="difficulty_container">
+        <DifficultyButton text="EASY" isActive />
+        <DifficultyButton text="MEDIUM" />
+        <DifficultyButton text="HARD" />
+      </div>
+    </>
+  );
+};
+
+export default Puzzle;
